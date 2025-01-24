@@ -72,11 +72,11 @@ const_figures: list = list()
     
 # Считывание данных из файла
 with open('input.txt','r') as f:
-    side, place, field_side = map(int, f.readline().split())
+    side, place, number_of_figurs = map(int, f.readline().split())
 
     # Генерация поля, расстановка фигур из файла
     field: list[list[int]] = [[0] * side for i in range(side)]
-    for i in range(field_side):
+    for i in range(number_of_figurs):
         x, y = map(int, f.readline().split())
         const_figures.append((x, y))
         field: list[list[int]] = place_figure(x, y, field)
